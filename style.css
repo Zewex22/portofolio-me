@@ -1,0 +1,526 @@
+html {
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+#check:checked~ul {
+  left: 0;
+  opacity: 1;
+}
+
+nav {
+  background: dodgerblue;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  z-index: 10;
+}
+
+a.logo b{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+nav ul li{
+  list-style: none;
+}
+
+nav ul li a {
+  display: inline-block;
+  position: relative;
+  line-height: 65px;
+  margin: 0 5px;
+  color: white;
+  font-size: 17px;
+  text-transform: uppercase;
+  padding: 7px 13px;
+  border-radius: 3px;
+}
+
+nav ul li a:hover {
+  color: grey;
+}
+
+nav ul li a::before{
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  width: 0;
+  height: 3px;
+  transition: all .4s;
+  background-color: grey;
+}
+
+nav ul li a:hover::before{
+  width: 100%;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+/* Responsive untuk tablet */
+@media (max-width: 952px) {
+  a.logo b{
+    font-size: 25px;
+    padding-left: 50px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+
+/* Responsive untuk HP */
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+
+  nav ul {
+    position: fixed;
+    width: 50%;
+    height: 500px;
+    background: steelblue;
+    top: 80px;
+    right: -100%;
+    text-align: center;
+    transition: right 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  nav ul li a{
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  #check:checked ~ ul {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+section{
+  padding: 5rem 4%;
+  background-color: white;
+}
+
+.home{
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  flex-wrap: wrap;
+}
+
+.home .content{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home .content .content-right{
+  width: 32%;
+  margin-left: 15px;
+}
+
+.home .content .content-right img{
+  width: 100%;
+  height: 100%;
+  border-radius: 100px 100px 100px 100px;
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 76% 24% 79% 21% / 56% 35% 65% 44%;
+}
+
+
+.home .content .content-left{
+  width: 62%;
+  margin-right: 15px;
+}
+
+.home .content .content-left h3{
+  text-transform: uppercase;
+  color: grey;
+  font-weight: bold;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.home .content .content-left h1{
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: bold;
+  color: dodgerblue;
+  font-size: 1.2rem;
+}
+.home .content .content-left p{
+  font-size: 1.2rem;
+  color: grey;
+  text-align: justify;
+}
+
+.home .content .content-left a{
+  flex-wrap: nowrap;
+  width: 15px;
+  height: 15px;
+  text-decoration: none;
+  color: black;
+  padding: 0 10px;
+  margin-top: 20px;
+}
+
+.home .content .content-left .btn{
+  background-color: dodgerblue;
+  text-align: center;
+  color: white;
+  margin: 20px;
+  border-radius: 5px;
+  border: none;
+  min-width: 100px;
+  height: 30px;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.home .content .content-left .btn:hover{
+  background: white;
+  color: black;
+}
+
+
+@media (max-width: 768px) {
+  .home .content {
+    flex-direction: column-reverse;
+  }
+
+  .home .content-left, .home .content-right {
+    width: 100%;
+    text-align: center;
+    margin: 30px 0;
+  }
+
+  .home .content-right img {
+    width: 100%;
+  }
+}
+
+
+.about{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana,
+  sans-serif;
+  flex-wrap: wrap;
+}
+
+.about .content1 h1{
+  text-align: center;
+  color: dodgerblue;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.about .content1 p{
+  text-decoration: none;
+  margin: 15px;
+  color: grey;
+  font-size: 1rem;
+}
+
+.about .content1 p:hover{
+  color: black;
+  transition: ease-in-out .3s;
+}
+hr{
+  width: 25%;
+  height: 5px;
+  background-color: dodgerblue;
+  margin: 0 auto;
+  opacity: 100%;
+}
+
+
+
+.skill {
+  text-align: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.skill .content-skill{
+  text-align: center;
+  align-items: center;
+}
+
+.skill .content-skill h1{
+  text-decoration: none;
+  color: dodgerblue;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.skill .image-container{
+  align-items: center;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.skill .image-container .item{
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  padding: 22px ;
+}
+
+.item img{
+  width: 150px;
+  height: 200px;
+  filter: drop-shadow(5px 5px 10px #555);
+  margin-right: 0;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.item h3{
+  color: dodgerblue;
+  font-weight: bold;
+}
+
+
+
+/* Container utama project */
+.project {
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.project .project-me {
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.project-me h1{
+  color: dodgerblue;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.project-me h4{
+  margin-top: 20px;
+}
+
+
+/* Kontainer project-porto untuk gambar dan teks */
+.project-porto {
+  padding: 10px;
+}
+
+/* Untuk elemen dalam .web */
+.project-porto .web {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  justify-content: center;
+}
+
+/* Desain gambar dalam setiap div */
+.project-porto .web .card {
+  width: 100%; 
+  max-width: 48%; 
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Efek hover (opsional) */
+.project-porto .web .card:hover {
+  transform: translateY(-5px);
+}
+
+/* Gambar dalam setiap card */
+.project-porto .web .card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* Teks dalam setiap card */
+.project-porto .web .card h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: dimgrey;
+}
+
+.project-porto .web .card p {
+  text-transform: none;
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+}
+
+/* Responsif untuk tampilan mobile */
+@media (max-width: 600px) {
+  .project-porto .web .card {
+    max-width: 100%; 
+  }
+
+  .project-porto .web .card img {
+    height: 200px; 
+  }
+
+  .project-porto .web .card h3 {
+    font-size: 16px;
+  }
+
+  .project-porto .web .card p {
+    font-size: 13px;
+  }
+}
+
+.saran {
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.saran-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.saran-container h2 {
+  font-size: 28px;
+  color: dodgerblue;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.saran-container p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.saran-container textarea {
+  width: 100%;
+  height: 150px;
+  padding: 15px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  margin-bottom: 20px;
+}
+
+.saran-container button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.saran-container button:hover {
+  background-color: dodgerblue;
+}
+
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 2rem 0;
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 2rem;
+  width: 100%;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer .box {
+  text-align: justify;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2, 5rem;
+  color: dodgerblue;
+  padding: .8rem 0;
+  border-bottom: .2rem solid black;
+  border-color: dodgerblue;
+}
+
+.footer .box-container .box a {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: dimgrey;
+  padding: 1rem 0;
+  text-transform: none;
+  text-decoration: none;
+}
